@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Techmaster</title>
+</head>
+<body>
+    <!-- Kiểm tra giá trị của biến Name có bằng Golang hay ko. eq là viết tắt của equal-->
+    <!-- So sánh với một string thì string phải đặt trong ""-->
+    {{if eq .Name "Golang"}}
+    <h1>Xin chào {{.Name}}</h1>
+    {{else}}
+    <h1>Who are you ?</h1>
+    {{end}}
+
+    <!-- Kiểm tra giá trị của biến Age có lớn hơn 10 hay ko. gt là viết tắt của greater than-->
+    {{if gt .Age 10}}
+    <h1>Lớn hơn 10</h1>
+    {{else if eq .Age 10}}
+    <h1>Bằng 10</h1>
+    {{else}}
+    <h1>Nhỏ hơn 10</h1>
+    {{end}}
+
+    <!-- Check điều kiện AND-->
+    {{if and (le .Age 10) (eq .IsNew true)}}
+    <h1>Ngôn ngữ mới</h1>
+    {{else}}
+    <h1>Ngôn ngữ cổ điển</h1>
+    {{end}}
+    
+    <!-- Check điều kiện OR-->
+    {{if or (eq .Name "Golang") (eq .Name "Javascript")}}
+    <h1>Ngôn ngữ trending</h1>
+    {{else}}
+    <h1>Ngôn ngữ cũ</h1>
+    {{end}}
+</body>
+</html>
