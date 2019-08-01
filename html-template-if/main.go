@@ -17,7 +17,7 @@ func main() {
 
 func hi(ctx iris.Context) {
 	// Truyền dữ liệu vào 2 biến Title và Name và pass 2 biến này vào file index.html
-	ctx.ViewData("Name", "Java")
+	ctx.ViewData("Name", "Java") 
 	ctx.ViewData("Age", 10)
 	ctx.ViewData("IsNew", true)
 	ctx.View("index.html")
