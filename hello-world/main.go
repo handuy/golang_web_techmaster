@@ -5,7 +5,7 @@ import (
 )
 
 func handlerFunc(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprint(w, "<h1>Web server chạy bằng Golang</h1>")
+    fmt.Fprint(w, "<h1 style='color:red;'>Web server chạy bằng Golang</h1>")
 }
 
 func main() {
