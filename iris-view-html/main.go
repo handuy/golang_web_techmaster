@@ -29,7 +29,9 @@ func main() {
 	// Đăng kí thư mục chứa file HTML
 	// ./view là đường dẫn đến thư mục view
 	// .html là định dạng các file HTML trả về
-	app.RegisterView(iris.HTML("./view", ".html"))
+	tmpl := iris.HTML("./views", ".html")
+	app.RegisterView(tmpl)
+	tmpl.Reload(true)
 
 	app.Get("/", homeHandler)
 
