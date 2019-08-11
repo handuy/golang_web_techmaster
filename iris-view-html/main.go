@@ -31,6 +31,7 @@ func main() {
 	// .html là định dạng các file HTML trả về
 	tmpl := iris.HTML("./views", ".html")
 	app.RegisterView(tmpl)
+	// Mỗi khi thay đổi file HTML, chỉ cần refresh lại trình duyệt, ko cần restart server
 	tmpl.Reload(true)
 
 	app.Get("/", homeHandler)
